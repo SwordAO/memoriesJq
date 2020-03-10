@@ -1,0 +1,178 @@
+#content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-family: 'SimHei', sans-serif;
+    background-color: #B71B00;
+}
+
+.content-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #B71B00;
+    /*background: url("../images/building/building_top.png") no-repeat;*/
+    background-size: 100%;
+}
+.top-title {
+    position: absolute;
+    width: 100%;
+}
+.top-title img {
+    width: 100%;
+    z-index: 99;
+}
+.top-btn {
+    position: absolute;
+    width: 100%;
+    top: 0.2rem;
+    font-size: 0.2rem;
+    color: #ffffff;
+}
+.top-login {
+    position: absolute;
+    left: -0.5rem;
+    width: 1.5rem;
+    height: 0.6rem;
+    background-color: #DB0101;
+    border-radius: 0.3rem;
+    line-height: 0.52rem;
+    text-align: right;
+    padding-right: 0.3rem;
+    border: 0.04rem solid #FAC9A9;
+}
+.top-logged {
+    position: absolute;
+    left: -0.5rem;
+    width: 4.4rem;
+    height: 0.6rem;
+    background-color: #EF4A3E;
+    border-radius: 0.3rem;
+    line-height: 0.6rem;
+    text-align: right;
+    padding-right: 0.3rem;
+    display: none;
+}
+.top-tips {
+    position: absolute;
+    right: 0.0rem;
+    width: 1.4rem;
+    height: 0.6rem;
+    background-color: #DB0101;
+    border-radius: 0.3rem 0 0 0.3rem;
+    line-height: 0.5rem;
+    text-align: left;
+    padding-left: 0.3rem;
+    border: 0.04rem solid #FAC9A9;
+    border-right: none;
+}
+.shops {
+    width: 7.5rem;
+    height: 11.47rem;
+    position: absolute;
+    top: 4.6rem;
+}
+
+.shops-item {
+    width: 7.5rem;
+    height: 11.47rem;
+    background-image: url("../images/building/shop_bg.png"), url('../images/building/pop_bg.png');
+    background-position: 20%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #B71B00;
+    position: relative;
+}
+
+.shops-item-title {
+    position: absolute;
+    font-size: 0.6rem;
+    color: #F6D6A6;
+    text-align: center;
+    top: 2.24rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.shops-item-discounts {
+    position: absolute;
+    top: 6.4rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.shops-item-discount {
+    width: 5.18rem;
+    height: 0.69rem;
+    background: url(../images/building/discount_bg.png);
+    background-size: 100%;
+    margin: 0 auto 0.18rem;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.69rem;
+    color: #ffffff;
+}
+
+.back-top {
+    position: fixed;
+    width: 1rem;
+    height: 1rem;
+    background: url("../images/building/back_top.png");
+    background-size: 100%;
+    right: 0.1rem;
+    bottom: 0.2rem;
+}
+.activity-rules {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%    ;
+    background: #883026;
+    background-size: 100%;
+    z-index: 999;
+    font-size: 0.4rem;
+}
+.activity-title {
+    position: absolute;
+    width: 6.9rem;
+    height: 1.59rem;
+    top: 5%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: url("../images/building/pop_rule_title.png");
+    background-size: 100%;
+}
+.activity-close {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    top: 83%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: url("../images/building/close.png") no-repeat;
+    background-size: 100%;
+}
+.activity-content {
+    /*width: 7.06rem;*/
+    /*height: 10.2rem;*/
+    /*margin: 1rem auto 0;*/
+    /*background: url("../images/building/pop_rule_title.png");*/
+    /*background-size: 100%;*/
+    /*padding: 1.7rem 0.8rem 1.4rem;*/
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #F43F1C 0%,#F79774 100%);
+    border: 0.06rem solid #FCE1A2;
+    border-radius: 0.4rem;
+    padding: 0.8rem 0.5rem 0.5rem;
+    overflow-y: scroll;
+}

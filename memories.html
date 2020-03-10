@@ -1,0 +1,643 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回忆录</title>
+    <link rel='stylesheet' href='styles/animate.css'/>
+    <link rel='stylesheet' href='styles/base.css'/>
+    <link rel='stylesheet' href='styles/memories.css'/>
+    <link rel='stylesheet' href='styles/scene1.css'/>
+    <link rel='stylesheet' href='styles/scene2.css'/>
+    <link rel='stylesheet' href='styles/scene3.css'/>
+    <link rel='stylesheet' href='styles/scene4.css'/>
+    <link rel='stylesheet' href='styles/scene5.css'/>
+    <link rel='stylesheet' href='styles/scene6.css'/>
+    <link rel='stylesheet' href='styles/scene7.css'/>
+    <link rel='stylesheet' href='styles/scene8.css'/>
+    <style>
+    </style>
+</head>
+
+<body>
+<div id='content'>
+    <ul class='content-wrap'>
+        <li>
+            <div class="scene1_bg2"></div>
+            <div id="scene1_cloud"></div>
+            <div class="scene1">
+                <div class="scene1-bg"></div>
+            </div>
+            <div id="bus_stop1" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText1" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div id="scene2_cloud"></div>
+            <div class="scene2">
+                <div class="scene2-bg"></div>
+            </div>
+            <div id="bus_stop2" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText2" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div class="scene3_bg2"></div>
+<!--            <div id="scene3_sun"></div>-->
+            <div id="scene3_cloud"></div>
+            <div class="scene3">
+                <div class="scene3-bg"></div>
+            </div>
+            <div id="bus_stop3" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText3" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div id="scene4_cloud"></div>
+            <div class="scene4">
+                <div class="scene4-bg"></div>
+            </div>
+            <div class="scene4_dialog"></div>
+<!--            <div class="light1"></div>-->
+            <div id="bus_stop4" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText4" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div class="scene5_bg2"></div>
+            <div id="scene5_cloud"></div>
+            <div class="scene5">
+                <div class="scene5-bg"></div>
+            </div>
+            <div id="scene5_flag"></div>
+            <div id="scene5_star"></div>
+            <div id="bus_stop5" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText5" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div class="scene6_bg2"></div>
+            <div id="scene6_cloud1"></div>
+            <div class="scene6">
+                <div class="scene6-bg"></div>
+            </div>
+            <div class="scene6_dialog"></div>
+            <div id="bus_stop6" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText6" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div class="scene7_bg2"></div>
+            <div id="scene7_cloud"></div>
+            <div class="scene7">
+                <div class="scene7-bg"></div>
+            </div>
+            <div id="scene7_balloon1" class="balloons_shake"></div>
+            <div id="scene7_balloon2" class="balloons_shake"></div>
+            <div id="scene7_balloon3" class="balloons_shake"></div>
+            <div id="scene7_balloon4" class="balloons_shake"></div>
+            <div id="scene7_balloon5" class="balloons_shake"></div>
+            <div id="bus_stop7" class="bus_stop">
+                <p class="bus_stop_text1"></p>
+                <p id="busStopText7" class="bus_stop_text2"></p>
+                <div class="bus_stop_finger"></div>
+            </div>
+        </li>
+        <li>
+            <div class="scene8_bg2"></div>
+            <div id="scene8_cloud"></div>
+            <div class="scene8">
+                <div class="scene8-bg"></div>
+            </div>
+        </li>
+<!--        <div id="sceneMask1" class="scene_mask"></div>-->
+<!--        <div id="sceneMask2" class="scene_mask"></div>-->
+<!--        <div id="sceneMask3" class="scene_mask"></div>-->
+<!--        <div id="sceneMask4" class="scene_mask"></div>-->
+    </ul>
+    <div id="car" class="car animated bounceInLeft delay-1s"></div>
+<!--    <div id="balloon">-->
+<!--        <p></p>-->
+<!--    </div>-->
+    <div class="scene8_btn">
+        <div class="scene8_btn1"><img class="scene8_finger1" src="images/moves/scene8_finger1.png">重温回忆</div>
+        <div class="scene8_btn2">逛年货<img class="scene8_finger2" src="images/moves/scene8_finger2.png"></div>
+    </div>
+    <div class="button">
+        <button id="btn_camera">
+            <div>咔嚓</div>
+        </button>
+        <button id="btn_step">
+            <div>>></div>
+            下一站
+        </button>
+        <button id="btn_prev">
+            <div><<</div>
+            上一站
+        </button>
+    </div>
+    <audio id="scene4_music" src="music/M18.mp3"></audio>
+</div>
+<div class="share_scene">
+    <div class="share_title">请长按保存照片</div>
+    <div class="share_content">
+        <div class="share_content_top">
+            <img src="">
+        </div>
+        <div class="share_content_bottom">
+            <p></p>
+            <img src="">
+        </div>
+    </div>
+</div>
+<script src="scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="scripts/Swipe.js"></script>
+<script type="text/javascript" src="scripts/fall.js"></script>
+<script>
+    $(function () {
+        // 公交站牌上的文字
+        $('#bus_stop1').children(":first").text('回忆上街路')
+        $('#bus_stop1').children(".bus_stop_text2").text('Lore corAse corAssusectetur adipisicing elit. Assumendae corAssusectetur adipisicing elit. Assumendae corAssusectetur adipisicing elit. Assumendae corAssusectetur adipisicing elit. Assumendae corAssusectetur adipisicing elit. Assumendasusectetur adipisicing elit. Assumenda at corporis enienim iste neque possimus ut. Accusantium aspernatur aut commodi dolor')
+
+        $('#bus_stop2').children(":first").text('回忆上街路')
+        $('#bus_stop2').children(".bus_stop_text2").text('Lorem ipsum dolor sit amet, consectetur adipim ipsum dolor sit amet, consectetur adipim ipsum dolor sit amet, consectetur adipim ipsum dolor sit amet, consectetur adipim ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at corporis enim iste neque possimus ut. Accusantium aspernatur aut commodi dolor')
+
+        $('#bus_stop3').children(":first").text('回忆上街路')
+        $('#bus_stop3').children(".bus_stop_text2").text('Loreus ut. Accuse possimus ut. Accusantium aspernaturue possimus ut. Accusantium aspernatur aut commodi dolor')
+
+        $('#bus_stop4').children(":first").text('回忆上街路')
+        $('#bus_stop4').children(".bus_stop_text2").text('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at met, consectetur adipisicing elit. Assumenda at met, consectetur adipisicing elit. Assumenda at met, consectetur adipisicing elit. Assumenda at corporis enim iste neque possimus ut. Accusantium aspernatur aut commodi dolor')
+
+        $('#bus_stop5').children(":first").text('回忆上街路')
+        $('#bus_stop5').children(".bus_stop_text2").text('Lorem ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at corporis enim iste neque possimus ut. Accusantium aspernatur aut commodi dolor')
+
+        $('#bus_stop6').children(":first").text('回忆上街路')
+        $('#bus_stop6').children(".bus_stop_text2").text('Lorem ipsum dolor sit amet, consectetur adipisicing elit. As ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing el ut. Accusantium aspernatur aut commodi dolor')
+
+        $('#bus_stop7').children(":first").text('回忆上街路')
+        $('#bus_stop7').children(".bus_stop_text2").text('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at corporis enim iste neque possimus ut. Ac ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing el ipsum dolor sit amet, consectetur adipisicing elcusantium aspernatur aut commodi dolor')
+
+        var shareText = '文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字字文字文字文字文字文字文字文字文字文'
+        var qrCode = 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577167867&di=47005f4be9ece03e9f5713c03a6626f8&src=http://ku.90sjimg.com/element_origin_min_pic/01/37/30/36573c45d2efb52.jpg'
+
+        // 分享图片,分享语,二维码
+        function setShareContent(shareImg, text, qrCode) {
+            $('.share_content_top > img').attr('src', shareImg)
+            $('.share_content_bottom > p').text(text)
+            $('.share_content_bottom > img').attr('src', qrCode)
+        }
+
+        // 咔嚓
+        $('#btn_camera').click(function () {
+            console.log(step)
+            if(step < 8 && step > 0) {
+                $('.share_scene').fadeIn()
+            }
+            if(step < 8 && step > 0) {
+                $('.share_scene').css('background-image', 'url("./images/share_scenes/share_scene' + step + '.png")')
+            }
+        })
+        $('.share_scene').click(function () {
+            $('.share_scene').fadeOut()
+        })
+
+        // 热气球上的文字
+        // $('#balloon > p').text('回忆上街路回忆上街路，回忆上街路回忆上街路回忆上街路，回忆上街路。')
+
+        // 站牌文字自动滚动
+        // $('.bus_stop_finger').click(function () {
+        //     var busStopId = 'busStopText' + step
+        //     var busStopIdJq = '#busStopText' + step
+        //     var ele = document.getElementById(busStopId);
+        //     //判断元素是否出现了滚动条
+        //     if(ele.scrollHeight > ele.clientHeight) {
+        //         //设置滚动条到最底部
+        //         $(busStopIdJq).animate({scrollTop: ele.scrollHeight}, 2000);
+        //     }
+        // })
+
+        var step = 0
+        var music = $('#scene4_music')[0] // 音乐
+        var container = $("#content")
+        var width = container.width() // 可视容器宽
+        var height = container.height() // 可视容器高
+        var $car = $('#car') // 小车
+        // var $balloon = $('#balloon') // 场景7的热气球
+        var percentShrink = 0 // 由原图到适配后缩小的比例
+        var carWidth = 0 // 车的宽度
+        // var balloonWidth = 0 // 热气球的宽度
+        // var moveDistance = 0 // 小车在可视容器中移动的距离
+        // var moveDistanceBalloon = 0 // 气球在可视容器中移动的距离
+        var swipe = Swipe($("#content")) // 场景滚动
+        var sceneWidth = 0 // 适配后的场景宽
+        var direction = '' // 方向，横竖
+        var visualWidth // 视觉宽度，用于移动背景时减去
+
+        // var interval // ribbon定时器
+
+        var $share = $('.share_scene') // 分享场景
+        var handleResize = () => {
+            if (width > height) { // 横屏时
+                visualWidth = width
+                direction = 'horizon'
+                container.css('transform', 'rotate(0deg)')
+                container.css('transform-origin', '0 0')
+                container.css('width', width)
+                container.css('height', height)
+                percentShrink = height / 750 // 由原图到适配后缩小的比例
+                sceneWidth = height * 2668 / 750 // 适配后的场景宽
+                $car.css({ // 根据比例计算小车的宽高，背景尺寸
+                    width: 643 * percentShrink + 'px',
+                    height: 200 * percentShrink + 'px',
+                    'background-size': '100% 100%'
+                })
+                // $balloon.css({
+                //     width: 943 * percentShrink + 'px',
+                //     height: 687 * percentShrink + 'px',
+                //     'background-size': '100% 100%'
+                // })
+                carWidth = $car.width()
+                // balloonWidth = $balloon.width()
+                // moveDistance = calcDistance(width, 0.4, carWidth) // 可视容器中移动的距离
+                // moveDistanceBalloon = calcDistance(width, 0.1, balloonWidth) // 可视容器中移动的距离
+            } else { // 竖屏时
+                visualWidth = height
+                direction = 'vertical'
+                container.css('transform', 'rotate(90deg)') // 旋转
+                container.css('transform-origin', width / 2 + "px " + width / 2 + "px") // 旋转点
+                container.css('width', height)
+                container.css('height', width)
+                percentShrink = width / 750 // 由原图到适配后缩小的比例
+                sceneWidth = width * 2668 / 750 // 适配后的场景宽
+
+                $car.css({ // 根据比例计算小车的宽高，背景尺寸
+                    width: 643 * percentShrink + 'px',
+                    height: 200 * percentShrink + 'px',
+                    'background-size': '100% 100%'
+                })
+                // $balloon.css({
+                //     width: 943 * percentShrink + 'px',
+                //     height: 687 * percentShrink + 'px',
+                //     'background-size': '100% 100%'
+                // })
+                // 分享场景旋转
+                $share.css('transform', 'rotate(90deg)') // 旋转
+                $share.css('transform-origin', width / 2 + "px " + width / 2 + "px") // 旋转点
+                $share.css('width', height)
+                $share.css('height', width)
+                carWidth = $car.width()
+                // balloonWidth = $balloon.width()
+                // moveDistance = calcDistance(height, 0.4, carWidth) // 小车在可视容器中移动的距离
+                // moveDistanceBalloon = calcDistance(height, 0.1, balloonWidth) // 气球在可视容器中移动的距离
+
+
+            }
+        }
+        handleResize()
+        window.onresize = handleResize
+
+        function rotateTouch (step) {
+            if(step > 6) return
+            // 旋转滑动问题
+            var touchStartX, startX; // 开始滚动位置，滚动距离，结束时距离顶部位置
+            var busStopId = 'busStopText' + (step + 1)
+            var touchOver = document.getElementById(busStopId).scrollTop
+            // 开始滚动
+            document.getElementById(busStopId).addEventListener("touchstart", function(e) {
+                touchStartX = e.touches[0].pageX;
+                // console.log('开始touch', touchStartX)
+            }, false)
+            // 结束滚动
+            document.getElementById(busStopId).addEventListener("touchend", function(e) {
+                touchOver = document.getElementById(busStopId).scrollTop
+                // console.log('结束touch', touchOver)
+            }, false)
+            // 滚动中
+            document.getElementById(busStopId).addEventListener("touchmove", function(e) {
+                startX = e.touches[0].pageX;
+                e.preventDefault() // 禁用默认滚动
+                // console.log('滚动距离', Math.abs(touchStartX - startX))
+                if((startX - touchStartX) > 0) { // 向上滑
+                    document.getElementById(busStopId).scrollTop = touchOver + Math.abs(touchStartX - startX)
+                } else { // 向下滑
+                    document.getElementById(busStopId).scrollTop = touchOver - Math.abs(touchStartX - startX)
+                }
+            }, false)
+        }
+
+        // 场景边缘过渡
+        // $('#sceneMask1').css('left', 'calc(' + sceneWidth + 'px - 0.4%)')
+        // $('#sceneMask2').css('left', 'calc(' + sceneWidth * 2 + 'px - 0.4%)')
+        // $('#sceneMask3').css('left', 'calc(' + sceneWidth * 3 + 'px - 0.4%)')
+        // $('#sceneMask4').css('left', 'calc(' + sceneWidth * 4 + 'px - 0.4%)')
+
+        //创建雪花
+        for (let i = 0; i < 30; i++) {
+            createFall(width, height, direction, 'snow', 0)
+            $('.snow').fadeIn()
+        }
+
+        // 手指滑动动画
+        function fingerSlide() {
+            var selector = '#bus_stop' + (step + 1) + ' > .bus_stop_finger'
+            var busStopId = 'busStopText' + (step + 1)
+            var ele = document.getElementById(busStopId);
+            if(!(ele.scrollHeight > ele.clientHeight)) {
+                $(selector).css({
+                    'display': 'none'
+                })
+            } else {
+                $(selector).addClass('finger_slide')
+            }
+        }
+
+        // 下一步事件
+        $('#btn_step').click(function () {
+            $car.removeClass('animated bounceInLeft')
+            $car.addClass('rotation_car_shake')
+            $('#btn_step').attr('disabled', 'disabled')
+            if(width < height) { // 只在旋转屏幕的时候应用
+                rotateTouch(step)
+            }
+            if (step === 0) { // ---------------------------------------第一个场景
+                $('#scene1_cloud').addClass('rotation') // 云飘动
+                $('#btn_camera').fadeIn()
+                $('#btn_prev').fadeIn()
+                fingerSlide()
+                $('#bus_stop1 > .bus_stop_finger').css({
+                    '-webkit-animation-delay': '6s',
+                    'animation-delay': '6s'
+                })
+
+                setShareContent('./images/moves/scene1_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 1) { // -------------------------------第二个场景
+                $('.snow').fadeOut('slow') // 雪花淡出
+                setTimeout(() => {
+                    $('.snow').remove(); // 移除雪花
+                }, 1000)
+                //创建花瓣
+                setTimeout(function () {
+                    for (var i = 0; i < 30; i++) {
+                        createFall(width, height, direction, 'flower', 1)
+                        $('.flower').fadeIn('slow') // 花淡入
+                    }
+                }, 1000)
+                $('#scene2_cloud').addClass('rotation2')
+                fingerSlide()
+
+                setShareContent('./images/moves/scene2_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 2) { // --------------------------------第三个场景
+                setTimeout(function () {
+                    $('.flower').remove().fadeOut('slow'); // 移除花 // 花淡出
+                }, 2000)
+                // $('#scene3_sun').addClass('scene3_sun_in') // 阳光
+                $('#scene3_cloud').addClass('rotation3') // 云
+                fingerSlide()
+
+                setShareContent('./images/moves/scene3_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 3) { // --------------------------------第四个场景
+                music.play(); // 播放音乐
+                $('#scene4_cloud').addClass('rotation_scene4_cloud') // 云
+                $('.scene4_dialog').addClass('animated rotateInUpRight delay-1s') // dialog
+                // $('.light1').addClass('animated fadeIn delay-4s') // 房屋灯光1
+                fingerSlide()
+
+                setShareContent('./images/moves/scene4_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 4) { // ---------------------------------第五个场景
+                // 创建落叶
+                setTimeout(function () {
+                    for (let i = 0; i < 30; i++) {
+                        createFall(width, height, direction, 'leaf', 4)
+                        $('.leaf').fadeIn('slow') // 叶子淡入
+                    }
+                }, 1000)
+                $('#scene5_star').addClass('scene5_star_shine') // 星星闪烁
+                $('#scene5_cloud').addClass('rotation_scene5_cloud') // 云
+                // $('#scene5_flag').addClass('slide_up_scene5_flag') // 升旗
+                setTimeout(() => {
+                    $car.addClass('car-light') // 开车灯
+                }, 1000)
+                fingerSlide()
+
+                setShareContent('./images/moves/scene5_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 5) { // ----------------------------------第六个场景
+                $('.scene6_dialog').addClass('animated rotateInUpRight delay-2s') // dialog
+                $('#scene6_cloud1').addClass('rotation_scene6_cloud1')
+                $('.leaf').fadeOut('slow') // 叶子淡出
+                setTimeout(function () {
+                    $('.leaf').remove(); // 移除叶子
+                }, 1000)
+                setTimeout(function () {
+                    $car.removeClass('car-light') // 关车灯
+                }, 2000)
+                //创建雪花
+                setTimeout(function () {
+                    for (var i = 0; i < 50; i++) {
+                        createFall(width, height, direction, 'snow', 5)
+                        $('.snow').fadeIn('slow') // 雪花淡入
+                    }
+                }, 1000)
+                fingerSlide()
+
+                setShareContent('./images/moves/scene6_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 6) { // -----------------------------------第七个场景
+                $('.snow').fadeOut('slow') // 雪花淡出
+                setTimeout(function () {
+                    $('.snow').remove(); // 移除雪花
+                }, 1000)
+                setTimeout(function () {
+                    for (var i = 0; i < 50; i++) {
+                        createFall(width, height, direction, 'snow', 6)
+                        $('.snow').fadeIn('slow') // 雪花淡入
+                    }
+                })
+                // $balloon.css({
+                //     'opacity': '1'
+                // })
+                // $('.scene7-bg').addClass('scene7-bg-infinite') // 背景无限滚动
+                // $balloon.addClass('rotation_balloon_shake balloon_in') // 进入，上下移动大气球
+                $('#scene7_cloud').addClass('rotation_scene7_cloud') // 云
+                $('.balloons_shake:odd').addClass('balloons_shake_animation') // 小气球上下移动 奇
+                setTimeout(function () {
+                    $('.balloons_shake:even').addClass('balloons_shake_animation') // 小气球上下移动 偶数气球
+                }, 1000)
+                // $balloon.animate({ // 大气球和车一起移动
+                //     'left': '0'
+                // }, 1000, 'linear', () => {
+                // })
+                fingerSlide()
+
+                setShareContent('./images/moves/scene7_bg.png', shareText, qrCode) // 咔嚓
+            } else if (step === 7) { // ------------------------------------第八个场景
+                $('#btn_step').fadeOut()
+                $('#btn_prev').fadeOut()
+                $('#btn_camera').fadeOut()
+                $('.scene8_btn').addClass('scene8_btn_show')
+                // $('.scene7-bg').removeClass('scene7-bg-infinite')
+                // $balloon.removeClass('balloon_in rotation_balloon_shake')
+                // $balloon.addClass('balloon_out') // 大气球飞走
+                $('.snow').fadeOut('slow') // 雪花淡出
+                setTimeout(function () {
+                    $('.snow').remove(); // 移除雪花
+                }, 1000)
+
+                // interval = setInterval(function () {
+                //     createFall(width, height, direction, 'ribbon', 7)
+                //     if($('.ribbon').length > 100) {
+                //         clearInterval(interval)
+                //     }
+                //     $('.ribbon').fadeIn()
+                // }, 1000)
+                // for(var i=0;i < 100;i++) {
+                //     createFall(width, height, direction, 'ribbon', 7)
+                // }
+                $('#scene8_cloud').addClass('rotation_scene8_cloud')
+            } else if (step === 8) {
+                return
+            }
+            $car.animate({ // 小车在屏幕中移动的距离，第8个场景移动到中间
+                'left': calcDistance(visualWidth, step === 7 ? 0.55 : 0.4, carWidth) + 'px'
+            }, step === 0 || step === 7 ? 2000 : 100, 'linear', function () {
+                step++
+                console.log('步数', step)
+                if (step === 1) {
+                    setTimeout(function () {
+                        $('#btn_step').removeAttr('disabled');
+                    }, 4000)
+                } else {
+                    setTimeout(function () {
+                        $('#btn_step').removeAttr('disabled');
+                    }, 8000)
+                }
+                if (step === 1) {
+                    swipe.scrollTo(sceneWidth - visualWidth, 4000)
+                } else if (step === 8) {
+                    swipe.scrollTo((sceneWidth * step) - visualWidth - sceneWidth / 2, 4000)
+                } else {
+                    swipe.scrollTo((sceneWidth * step) - visualWidth, 8000)
+                }
+            })
+        });
+
+        // 上一步事件
+        $('#btn_prev').click(function () {
+            if(step === 1) {
+                // $car.removeClass('rotation_car_shake')
+                $('#scene1_cloud').removeClass('rotation') // 云飘动
+            } else if(step === 2) {
+                $('.flower').remove();
+                $('#scene2_cloud').removeClass('rotation2')
+            } else if(step === 3) {
+                $('#scene3_cloud').removeClass('rotation3') // 云
+                // $('#scene3_sun').removeClass('scene3_sun_in') // 阳光
+            } else if(step === 4) {
+                $('#scene4_cloud').removeClass('rotation_scene4_cloud') // 云
+                $('.scene4_dialog').removeClass('animated rotateInUpRight delay-1s') // dialog
+                // $('.light1').removeClass('animated fadeIn delay-4s') // 房屋灯光1
+                music.pause(); // 暂停播放
+            } else if(step === 5) {
+                $('#scene5_star').removeClass('scene5_star_shine') // 星星闪烁
+                $('#scene5_cloud').removeClass('rotation_scene5_cloud') // 云
+                // $('#scene5_flag').removeClass('slide_up_scene5_flag') // 升旗
+                $('.leaf').remove(); // 移除叶子
+            } else if(step === 6) {
+                $('.scene6_dialog').removeClass('animated rotateInUpRight delay-2s') // dialog
+                $('#scene6_cloud1').removeClass('rotation_scene6_cloud1')
+                $('.snow').remove(); // 移除雪花
+            } else if(step ===7) {
+                // $balloon.removeClass('balloon_in')
+                // $('.scene7-bg').removeClass('scene7-bg-infinite') // 背景无限滚动
+                $('#scene7_cloud').removeClass('rotation_scene7_cloud') // 云
+                $('.balloons_shake').removeClass('balloons_shake_animation') // 气球上下移动
+                // $balloon.css({
+                //     'opacity': '0',
+                //     'left': '100%'
+                // })
+                $('.snow').remove(); // 移除雪花
+            } else if(step === 8) {
+                // $balloon.addClass('balloon_in')
+                // $('.scene7-bg').addClass('scene7-bg-infinite') // 背景无限滚动
+                // $balloon.addClass('rotation_balloon_shake balloon_in') // 进入，上下移动大气球
+                // $balloon.removeClass('balloon_out') // 大气球飞走
+                $('#scene8_cloud').removeClass('rotation_scene8_cloud')
+                // $('.ribbon').remove(); // 移除第八场景的彩带
+                // clearInterval(interval)
+                $('.scene8_btn').removeClass('scene8_btn_show')
+            }
+            if(step === 1) {
+                swipe.scrollTo(0, 500)
+            } else {
+                swipe.scrollTo((sceneWidth * step) - visualWidth - sceneWidth, 500)
+            }
+            step -= 1
+        })
+
+        $('.scene8_btn1').click(function () { // 重温按钮
+            step = 0
+            $('#btn_step').fadeIn()
+            $('#btn_prev').fadeIn()
+            $('.bus_stop_finger').removeClass('finger_slide')
+
+            $car.removeClass('rotation_car_shake') // 汽车发动
+            $car.animate({
+                'left': '0'
+            }, 500)
+            $('#scene1_cloud').removeClass('rotation') // 云飘动
+
+            $('#scene2_cloud').removeClass('rotation2')
+
+            $('#scene3_cloud').removeClass('rotation3') // 云
+            // $('#scene3_sun').removeClass('scene3_sun_in') // 阳光
+
+            $('#scene4_cloud').removeClass('rotation_scene4_cloud') // 云
+            $('.scene4_dialog').removeClass('animated rotateInUpRight delay-1s') // dialog
+            // $('.light1').removeClass('animated fadeIn delay-4s') // 房屋灯光1
+            music.pause(); // 暂停播放
+
+            $('#scene5_star').removeClass('scene5_star_shine') // 星星闪烁
+            $('#scene5_cloud').removeClass('rotation_scene5_cloud') // 云
+            // $('#scene5_flag').removeClass('slide_up_scene5_flag') // 升旗
+
+            $('.scene6_dialog').removeClass('animated rotateInUpRight delay-2s') // dialog
+            $('#scene6_cloud1').removeClass('rotation_scene6_cloud1')
+
+            // $('.scene7-bg').removeClass('scene7-bg-infinite') // 背景无限滚动
+            $('#scene7_cloud').removeClass('rotation_scene7_cloud') // 云
+            $('.balloons_shake:odd').removeClass('balloons_shake_animation') // 气球上下移动
+            $('.balloons_shake:even').removeClass('balloons_shake_animation') // 偶数气球
+            // $balloon.css({
+            //     'opacity': '0',
+            //     'left': '100%'
+            // })
+
+            // $balloon.removeClass('balloon_in')
+            // $balloon.removeClass('balloon_out') // 大气球飞走
+            $('#scene8_cloud').removeClass('rotation_scene8_cloud')
+            // $('.ribbon').remove(); // 移除第八场景的彩带
+            // clearInterval(interval)
+            $('.scene8_btn').removeClass('scene8_btn_show')
+
+            swipe.scrollTo(0, 500)
+        });
+        $('.scene8_btn2').click(function () {
+          window.location.href = './building.html'
+        })
+        function calcDistance(distance, position, carWidth) { // 计算场景移动的位置，position表示移动到场景中间
+            return distance * position - carWidth / 2 // 可视容器长 * 可视容器位置 - 小车的一半长度
+        }
+    })
+</script>
+</body>
+</html>

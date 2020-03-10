@@ -1,0 +1,74 @@
+.scene1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.scene1-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/moves/scene1_bg.png");
+    background-size: 100% 100%;
+}
+.scene1_bg2 {
+    width: 100%;
+    height: 100%;
+    background: url("../images/moves/scene1_bg2.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+#scene1_cloud {
+    width: 100%;
+    height: 89%;
+    background: url("../images/moves/scene1_cloud.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    right: -300px;
+}
+
+.snow {
+    background: url('../images/moves/snow.png');
+    background-size: 100% 100%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /*opacity: 0.5;*/
+}
+
+.rotation {
+    -webkit-animation: rotation 10s;
+    animation: rotation 10s;
+    -webkit-animation-timing-function: cubic-bezier(1.0, 1.0, 0.1, 0.1);
+    animation-timing-function: cubic-bezier(1.0, 1.0, 0.1, 0.1);
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        /*opacity: 0.6;*/
+        right: -300px;
+    }
+    to {
+        /*opacity: 1;*/
+        right: -0px;
+    }
+}
+@keyframes rotation {
+    from {
+        /*opacity: 0.6;*/
+        right: -300px;
+    }
+    to {
+        /*opacity: 1;*/
+        right: -0px;
+    }
+}
+

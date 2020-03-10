@@ -1,0 +1,128 @@
+.scene8 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.scene8-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/moves/scene8_bg.png");
+    background-size: 100% 100%;
+}
+.scene8_bg2 {
+    width: 100%;
+    height: 100%;
+    background: url("../images/moves/scene8_bg2.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+#scene8_cloud {
+    width: 46.4%;
+    height: 34.53%;
+    background: url("../images/moves/scene8_cloud.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 9.6%;
+    left: 50%;
+}
+.rotation_scene8_cloud {
+    -webkit-animation: rotation_scene8_cloud 20s;
+    animation: rotation_scene8_cloud 20s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 1.0, 1.0, 1.0);
+    animation-timing-function: cubic-bezier(0.1, 1.0, 1.0, 1.0);
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay:2s;
+    animation-delay:2s;
+}
+@-webkit-keyframes rotation_scene8_cloud {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
+@keyframes rotation_scene8_cloud {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
+.scene8_btn {
+    width: 45.8%;
+    height: 9.33%;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: #ffffff;
+    font-weight: bold;
+    bottom: 3.47%;
+    opacity: 0;
+    z-index: 9999;
+}
+.scene8_btn_show {
+    -webkit-animation: scene8_btn_show 1s;
+    animation: scene8_btn_show 1s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+@keyframes scene8_btn_show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.scene8_btn1, .scene8_btn2 {
+    display: inline-block;
+    width: 40%;
+    background: url("../images/moves/scene8_btn_bg.png");
+    background-size: 100% 100%;
+    text-align: center;
+}
+.scene8_btn1 {
+    width: 8rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+}
+.scene8_btn2 {
+    width: 8rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+}
+.scene8_finger1 {
+    width: 25%;
+    margin-right: 2%;
+}
+.scene8_finger2 {
+    width: 25%;
+    margin-left: 5%;
+}
+.ribbon {
+    position: absolute;
+    width: 6px;
+    height: 30px;
+}
+

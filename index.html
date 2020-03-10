@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <title>回忆录</title>
+  <!--    <link rel='stylesheet' href='styles/animate.css'/>-->
+  <link rel='stylesheet' href='styles/base.css'/>
+  <link rel='stylesheet' href='styles/index.css'/>
+</head>
+<body>
+<div id="content">
+  <div class="content-wrap">
+    <div class="page4">
+      <div id="page4BusStop" class="page4_bus_stop">
+        <p class="bus_stop_text1"></p>
+        <p id="busStopText2" class="bus_stop_text2"></p>
+        <div class="bus_stop_finger"></div>
+      </div>
+      <div class="page4_car"></div>
+      <a class="page4_start_btn" href="./memories.html">
+        <div>开启<br>旅程</div>
+        <div>></div>
+      </a>
+      <button id="btn_camera">
+        <div>咔嚓</div>
+      </button>
+    </div>
+    <div class="page3">
+      <div class="page3_title">通讯得分：</div>
+      <div class="page3_score">100</div>
+      <div class="page3_text">你对你的通信真是了如指掌， 但这些记忆是还依然清晰？</div>
+      <a id="startMemory" href="javascript:void(0);"><span>开始回忆</span></a>
+    </div>
+    <div class="page2">
+      <div id="page2Titles"></div>
+      <a class="finished">答完啦</a>
+    </div>
+    <div class="page1">
+      <a id="validMemory" href="javascript:void(0);">验证回忆</a>
+      <a id="startMemoryNow" href="javascript:void(0);">直接回忆</a>
+    </div>
+    <div class="loading">
+      <div class="car_moving">
+        <div class="car_moving_road loading_road_infinite"></div>
+        <div class="car_moving_loading"></div>
+      </div>
+      <div class="loading_percent">
+        <div class="loading_percent_num"><span id="loadingPercent"></span>%</div>
+        <div class="loading_percent_bar">
+          <div class="loading_percent_wrapper">
+            <div id="loadingBar" class="loading_bar_inner"></div>
+          </div>
+        </div>
+      </div>
+      <p id="loadingText" class="loading_text"></p>
+    </div>
+    <div class="tips"></div>
+  </div>
+</div>
+<div class="share_scene">
+  <div class="share_title">请长按保存照片</div>
+  <div class="share_content">
+    <div class="share_content_top">
+      <img src="">
+    </div>
+    <div class="share_content_bottom">
+      <p></p>
+      <img src="">
+    </div>
+  </div>
+</div>
+<script src="scripts/jquery-1.9.1.min.js"></script>
+<script src="scripts/rem.js"></script>
+<script type="text/javascript">
+
+  $(function () {
+    // $('#busStopText2').bind('touchmove', function(e) {
+    //   console.log(e)
+    // });
+    // 进度条
+    let percent = 70
+    $('#loadingPercent').text(percent)
+    $('#loadingBar').css({
+      width: percent + '%'
+    })
+    // loading页
+    $('#loadingText').text('时光总是很快，就像往事如烟一样 还好时间总会记得，比如：纪念日、生日 但你还记得2019年的第一通电话是谁吗？ 还记得2019年的第一通电话是谁吗')
+
+    $('#page4BusStop').children(".bus_stop_text1").text('回忆上街路')
+    $('#page4BusStop').children(".bus_stop_text2").text('isicingsicing elit. nda atnda at corporis enim iste neque possimus sicing elit. nda atnda at corporis enim iste neque possimus sicing elit. nda atnda at corporis enim iste neque possimus  elit. nda atnda at corporis enim iste neque possimus ut. Accusantium aspernatur aut commodi dolor')
+
+    // 咔嚓
+    $('#btn_camera').click(function () {
+      $('.share_scene').fadeIn()
+
+      var shareImg = './images/moves/scene1_bg.png'
+      var shareText = '文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字字文字文字文字文字文字文字文字文字文'
+      var qrCode = 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577167867&di=47005f4be9ece03e9f5713c03a6626f8&src=http://ku.90sjimg.com/element_origin_min_pic/01/37/30/36573c45d2efb52.jpg'
+      // 分享图片,分享语,二维码
+      $('.share_content_top > img').attr('src', shareImg)
+      $('.share_content_bottom > p').text(shareText)
+      $('.share_content_bottom > img').attr('src', qrCode)
+    })
+    $('.share_scene').click(function () {
+      $('.share_scene').fadeOut()
+    })
+
+    // 站牌文字自动滚动
+    // $('.bus_stop_finger').click(function () {
+    //   var ele = document.getElementById("busStopText2");
+    //   //判断元素是否出现了滚动条
+    //   if(ele.scrollHeight > ele.clientHeight) {
+    //     //设置滚动条到最底部
+    //     $('#busStopText2').animate({scrollTop: ele.scrollHeight}, 2000);
+    //   }
+    // })
+
+    var container = $("#content")
+    var width = container.width() // 可视容器宽
+    var height = container.height() // 可视容器高
+    var handleResize = () => {
+      if (width > height) { // 横屏时
+        container.css('transform', 'rotate(0deg)')
+        container.css('transform-origin', '0 0')
+        container.css('width', width)
+        container.css('height', height)
+      } else { // 竖屏时
+        container.css('transform', 'rotate(90deg)') // 旋转
+        container.css('transform-origin', width / 2 + "px " + width / 2 + "px") // 旋转点
+        container.css('width', height)
+        container.css('height', width)
+
+        // 旋转滑动问题
+        var touchStartX, startX; // 开始滚动位置，滚动距离，结束时距离顶部位置
+        var touchOver = document.getElementById('busStopText2').scrollTop
+        // 开始滚动
+        document.getElementById('busStopText2').addEventListener("touchstart", function(e) {
+          touchStartX = e.touches[0].pageX;
+          // console.log('开始touch', touchStartX)
+        }, false)
+        // 结束滚动
+        document.getElementById('busStopText2').addEventListener("touchend", function(e) {
+          touchOver = document.getElementById('busStopText2').scrollTop
+          // console.log('结束touch', touchOver)
+        }, false)
+        // 滚动中
+        document.getElementById('busStopText2').addEventListener("touchmove", function(e) {
+          startX = e.touches[0].pageX;
+          e.preventDefault() // 禁用默认滚动
+          // console.log('滚动距离', startX - touchStartX)
+          if((startX - touchStartX) > 0) { // 向下滚动
+            document.getElementById('busStopText2').scrollTop = touchOver + Math.abs(touchStartX - startX)
+          } else { // 向上滚动
+            document.getElementById('busStopText2').scrollTop = touchOver - Math.abs(touchStartX - startX)
+          }
+        }, false)
+      }
+    }
+    handleResize()
+    window.onresize = handleResize
+    setTimeout(function () {
+      $('.tips').fadeOut() // 移除横屏提示
+    }, 1000)
+    $('.loading').click(function () {
+      $('.loading').fadeOut()
+    })
+
+    $('#validMemory').click(function () { // 验证回忆
+      $('.page1').fadeOut()
+    })
+    $('#startMemory').click(function () { // 开始回忆
+      $('.page3').fadeOut()
+      $('.bus_stop_finger').addClass('finger_slide')
+    })
+    $('#startMemoryNow').click(function () { // 直接回忆
+      $('.page1').fadeOut()
+      $('.page2').remove()
+      $('.page3').remove()
+      $('.bus_stop_finger').addClass('finger_slide')
+    })
+
+    //判断元素是否出现了滚动条，没有则隐藏
+    var ele = document.getElementById("busStopText2");
+    if(!(ele.scrollHeight > ele.clientHeight)) {
+      $('.bus_stop_finger').css({
+        'display': 'none'
+      })
+    }
+
+    //对数据做遍历，拼接到页面显示
+    var ajaxData = [
+      {
+        id: 1,
+        title: '2018年你打的第一通电话是 12399990000，2019年第一通还是他吗？'
+      },
+      {
+        id: 2,
+        title: '2018年你打的第一通电话是 12399990000，2019年第一通还是他吗？'
+      }
+    ]
+    var ajaxHtml = ''
+    for (var i = 0; i < ajaxData.length; i++) {
+      ajaxHtml += '<div class="page2_item" id="page2Title' + ajaxData[i].id + '">' +
+        '<span class="page2_item_index">' + ajaxData[i].id + '</span>.' +
+        '<span class="page2_item_title">' + ajaxData[i].title + '</span>' +
+        '<div class="page2_item_options">' +
+        '<span class="page2_item_checkbox">' +
+        '<input type="radio" value="0" name="radio' + ajaxData[i].id + '"><label>是</label>' +
+        '<input type="radio" value="1" name="radio' + ajaxData[i].id + '"><label>否</label>' +
+        '</span>' +
+        '</div>' +
+        '</div>'
+    }
+    //放入页面的容器显示
+    $('#page2Titles').html(ajaxHtml);
+
+    // 答完啦
+    $('.finished').click(function () {
+      // 获取单选框值
+      $.each($('.page2_item'), function () {
+        console.log($(this).children('.page2_item_options').children('.page2_item_checkbox').find('input')[0].checked)
+        console.log($(this).children('.page2_item_options').children('.page2_item_checkbox').find('input')[1].checked)
+      })
+      $('.page2').fadeOut()
+    })
+  })
+</script>
+</body>
+</html>
